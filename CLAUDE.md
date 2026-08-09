@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A benchmark for how well LLMs assess grant proposals and predict follow-up funding. Models see historical AI-safety proposals from Manifund (outcomes stripped), roleplay a real funder (LTFF, SFF, two Coefficient Giving funds), recommend a grant amount, and forecast the project's raise per year. Design notes: `INITIAL_SPEC.md` (original spec) and `PLAN.md` (decisions + build order).
+A benchmark for how well LLMs assess grant proposals and predict follow-up funding. Models see historical AI-safety proposals from Manifund (outcomes stripped), roleplay a real funder (LTFF, SFF, two Coefficient Giving funds), recommend a grant amount, and forecast the project's raise per year. Design notes: `INITIAL_SPEC.md` (original spec) and `docs/2026-08-07-initial-plan.md` (decisions + build order).
 
 ## Commands
 

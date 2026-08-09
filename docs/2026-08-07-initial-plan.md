@@ -1,4 +1,4 @@
-# Funding Bench 0 — Plan
+# Funding Bench 0 — Plan (2026-08-07)
 
 MVP of a benchmark testing how well LLMs assess grant proposals and predict follow-up funding,
 per INITIAL_SPEC.md plus decisions made 2026-08-07.

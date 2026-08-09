@@ -1,5 +1,7 @@
 # Funding Bench 0
 
+(written by Austin, 2026-08-07)
+
 I'd like to create a new benchmark for seeing how well models (and scaffolds) can assess grant proposals, and predict whether different a proposal will get follow-up funding.
 
 In this initial version of the benchmark, I'd like to:
