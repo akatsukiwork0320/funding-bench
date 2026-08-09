@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "oxfmt",
     "fetch-proposals": "bun run scripts/fetch-proposals.ts",
     "merge-research": "bun run scripts/merge-research.ts",
     "eval": "bun run scripts/eval.ts"
@@ -24,6 +25,7 @@
     "@types/node": "^20.19.39",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19",
+    "oxfmt": "^0.62.0",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
   },
