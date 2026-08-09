@@ -15,16 +15,14 @@ export default function Home() {
     <div className="space-y-8">
       <section>
         <h1 className="text-2xl font-bold">
-          Can LLMs judge grant proposals<span className="text-orange-600">?</span>
+          How well do LLMs forecast <span className="text-orange-600">AI safety funding</span>?
         </h1>
         <p className="mt-4 max-w-2xl leading-relaxed">
-          Funding Bench shows models historical AI-safety grant proposals from{" "}
+          We give different language models a historical proposal from{" "}
           <a href="https://manifund.org" className="underline">
             Manifund
-          </a>{" "}
-          — with all funding outcomes stripped — and asks them, in the persona of a real funder, to
-          (1) recommend a grant amount and (2) predict how much the project will actually raise,
-          year by year. Predictions are scored against what happened.
+          </a>, and ask them to evaluate it from the perspective of a funder (like cG, LTFF, or SFF). 
+          They predict how much that project will raise, in the proposal year and every year after.
         </p>
       </section>
 
