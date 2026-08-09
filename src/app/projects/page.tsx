@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { getProposals } from '@/lib/data';
+import Link from "next/link";
+import { getProposals } from "@/lib/data";
 
 const COHORT_LABELS: Record<string, string> = {
-  named: 'large',
-  funded: 'well-funded',
-  random: 'random',
+  named: "large",
+  funded: "well-funded",
+  random: "random",
 };
 
 export default function ProjectsPage() {
@@ -34,25 +34,14 @@ export default function ProjectsPage() {
             >
               <td className="py-2 pr-4 whitespace-nowrap">{p.proposal_date}</td>
               <td className="py-2 pr-4">
-                <Link
-                  href={`/projects/${p.slug}`}
-                  className="underline hover:text-orange-600"
-                >
+                <Link href={`/projects/${p.slug}`} className="underline hover:text-orange-600">
                   {p.title}
                 </Link>
                 <div className="text-xs text-neutral-500">{p.creator_name}</div>
               </td>
-              <td className="py-2 pr-4 whitespace-nowrap">
-                ${p.funding_goal.toLocaleString()}
-              </td>
+              <td className="py-2 pr-4 whitespace-nowrap">${p.funding_goal.toLocaleString()}</td>
               <td className="py-2 whitespace-nowrap">
-                <span
-                  className={
-                    p.cohort === 'random'
-                      ? 'text-neutral-500'
-                      : 'text-orange-600'
-                  }
-                >
+                <span className={p.cohort === "random" ? "text-neutral-500" : "text-orange-600"}>
                   {COHORT_LABELS[p.cohort]}
                 </span>
               </td>

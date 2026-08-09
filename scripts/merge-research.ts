@@ -8,11 +8,7 @@
 
 import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
-import type {
-  ExternalFundingEntry,
-  FunderRubric,
-  GroundTruthMap,
-} from "../src/lib/types";
+import type { ExternalFundingEntry, FunderRubric, GroundTruthMap } from "../src/lib/types";
 
 const DATA_DIR = join(process.cwd(), "data");
 
@@ -29,12 +25,8 @@ interface ResearchRaw {
   rubrics: FunderRubric[];
 }
 
-const raw: ResearchRaw = JSON.parse(
-  readFileSync(join(DATA_DIR, "research-raw.json"), "utf8")
-);
-const gt: GroundTruthMap = JSON.parse(
-  readFileSync(join(DATA_DIR, "ground-truth.json"), "utf8")
-);
+const raw: ResearchRaw = JSON.parse(readFileSync(join(DATA_DIR, "research-raw.json"), "utf8"));
+const gt: GroundTruthMap = JSON.parse(readFileSync(join(DATA_DIR, "ground-truth.json"), "utf8"));
 
 let merged = 0;
 for (const rp of raw.projects) {
@@ -57,9 +49,7 @@ console.log(`merged research for ${merged} projects into ground-truth.json`);
 // are dropped.
 const FUNDER_SLUGS = ["ltff", "sff", "cg-ntai", "cg-gcro"];
 if (raw.rubrics?.length) {
-  const existing: FunderRubric[] = JSON.parse(
-    readFileSync(join(DATA_DIR, "funders.json"), "utf8")
-  );
+  const existing: FunderRubric[] = JSON.parse(readFileSync(join(DATA_DIR, "funders.json"), "utf8"));
   const bySlug = new Map(existing.map((f) => [f.slug, f]));
   for (const r of raw.rubrics) {
     if (!FUNDER_SLUGS.includes(r.slug)) {
@@ -68,23 +58,19 @@ if (raw.rubrics?.length) {
     }
     bySlug.set(r.slug, r);
   }
-  const rubrics = FUNDER_SLUGS.filter((s) => bySlug.has(s)).map(
-    (s) => bySlug.get(s)!
-  );
+  const rubrics = FUNDER_SLUGS.filter((s) => bySlug.has(s)).map((s) => bySlug.get(s)!);
   writeFileSync(join(DATA_DIR, "funders.json"), JSON.stringify(rubrics, null, 2));
   console.log(`funders.json now has: ${rubrics.map((r) => r.slug).join(", ")}`);
 }
 
 // sanity: every ground-truth project should have yearly manifund data now
 const missingYearly = Object.entries(gt).filter(
-  ([, v]) =>
-    v.manifund_total_raised > 0 &&
-    Object.keys(v.manifund_raised_by_year).length === 0
+  ([, v]) => v.manifund_total_raised > 0 && Object.keys(v.manifund_raised_by_year).length === 0,
 );
 if (missingYearly.length) {
   console.warn(
     `WARNING: projects with raised>0 but no yearly breakdown: ${missingYearly
       .map(([slug]) => slug)
-      .join(", ")}`
+      .join(", ")}`,
   );
 }

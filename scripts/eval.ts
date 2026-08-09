@@ -192,7 +192,10 @@ async function verifyModels(models: string[]) {
     console.error(`\nThese model ids don't exist on OpenRouter: ${missing.join(", ")}`);
     for (const m of missing) {
       const stem = m.split("/")[1]?.split("-").slice(0, 2).join("-") ?? m;
-      const near = data.filter((x) => x.id.includes(stem)).map((x) => x.id).slice(0, 8);
+      const near = data
+        .filter((x) => x.id.includes(stem))
+        .map((x) => x.id)
+        .slice(0, 8);
       if (near.length) console.error(`  candidates for ${m}: ${near.join(", ")}`);
     }
     throw new Error("fix MODELS in scripts/eval.ts (or pass --models)");
@@ -228,9 +231,7 @@ async function main() {
   const existing = await db.query({
     evals: { $: { where: { promptVersion: PROMPT_VERSION } } },
   });
-  const done = new Set(
-    existing.evals.filter((e) => !e.error).map((e) => e.cellKey)
-  );
+  const done = new Set(existing.evals.filter((e) => !e.error).map((e) => e.cellKey));
 
   const cells: { model: string; funder: FunderRubric; proposal: Proposal }[] = [];
   for (const model of models)
@@ -242,7 +243,7 @@ async function main() {
       }
 
   console.log(
-    `running ${cells.length} cells (${models.length} models × ${selFunders.length} funders × ${selProjects.length} projects, ${done.size} already done)`
+    `running ${cells.length} cells (${models.length} models × ${selFunders.length} funders × ${selProjects.length} projects, ${done.size} already done)`,
   );
   if (!cells.length) return;
 
@@ -252,7 +253,7 @@ async function main() {
       createdAt: Date.now(),
       promptVersion: PROMPT_VERSION,
       notes: `models=${models.join(",")}`,
-    })
+    }),
   );
 
   let completed = 0;
@@ -266,9 +267,7 @@ async function main() {
       const started = Date.now();
       let update: Record<string, unknown>;
       try {
-        const { text, costUsd } = await withRetries(() =>
-          callOpenRouter(cell.model, system, user)
-        );
+        const { text, costUsd } = await withRetries(() => callOpenRouter(cell.model, system, user));
         const out = parseOutput(text);
         spent += costUsd ?? 0;
         update = {
@@ -293,7 +292,7 @@ async function main() {
             createdAt: Date.now(),
             ...update,
           })
-          .link({ run: runId })
+          .link({ run: runId }),
       );
       completed++;
       if (completed % 10 === 0 || completed === cells.length) {

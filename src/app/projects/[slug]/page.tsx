@@ -1,17 +1,13 @@
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
-import { getProposal, getProposals } from '@/lib/data';
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+import { getProposal, getProposals } from "@/lib/data";
 
 export function generateStaticParams() {
   return getProposals().map((p) => ({ slug: p.slug }));
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const p = getProposal(slug);
   if (!p) notFound();
@@ -36,10 +32,10 @@ export default async function ProjectPage({
         <ReactMarkdown>{p.description}</ReactMarkdown>
       </div>
       <p className="mt-8 text-xs text-neutral-500">
-        Source:{' '}
+        Source:{" "}
         <a href={p.url} className="underline">
           {p.url}
-        </a>{' '}
+        </a>{" "}
         (funding data hidden from evaluated models)
       </p>
     </article>

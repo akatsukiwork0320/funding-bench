@@ -38,17 +38,29 @@ body {
   font-weight: 700;
   margin: 1.5em 0 0.5em;
 }
-.prose-bench h1 { font-size: 1.25rem; }
-.prose-bench h2 { font-size: 1.1rem; }
-.prose-bench h3 { font-size: 1rem; }
-.prose-bench p { margin: 0.75em 0; }
+.prose-bench h1 {
+  font-size: 1.25rem;
+}
+.prose-bench h2 {
+  font-size: 1.1rem;
+}
+.prose-bench h3 {
+  font-size: 1rem;
+}
+.prose-bench p {
+  margin: 0.75em 0;
+}
 .prose-bench ul,
 .prose-bench ol {
   margin: 0.75em 0;
   padding-left: 1.5em;
 }
-.prose-bench ul { list-style: disc; }
-.prose-bench ol { list-style: decimal; }
+.prose-bench ul {
+  list-style: disc;
+}
+.prose-bench ol {
+  list-style: decimal;
+}
 .prose-bench a {
   text-decoration: underline;
   color: #ea580c; /* orange-600 */
@@ -64,4 +76,6 @@ body {
   background: rgba(249, 115, 22, 0.08);
   padding: 0.1em 0.3em;
 }
-.prose-bench img { max-width: 100%; }
+.prose-bench img {
+  max-width: 100%;
+}

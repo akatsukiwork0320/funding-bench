@@ -1,5 +1,5 @@
-import { getFunders, getGroundTruth, getProposals } from '@/lib/data';
-import ResultsClient from './results-client';
+import { getFunders, getGroundTruth, getProposals } from "@/lib/data";
+import ResultsClient from "./results-client";
 
 export default function ResultsPage() {
   return (

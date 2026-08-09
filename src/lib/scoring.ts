@@ -19,11 +19,7 @@ export function actualByYear(gt: GroundTruth): Record<string, number> {
   return byYear;
 }
 
-export function sumYears(
-  byYear: Record<string, number>,
-  fromYear: number,
-  toYear: number
-): number {
+export function sumYears(byYear: Record<string, number>, fromYear: number, toYear: number): number {
   let total = 0;
   for (let y = fromYear; y <= toYear; y++) total += byYear[String(y)] ?? 0;
   return total;
@@ -102,7 +98,7 @@ export interface ModelScore {
 export function fundingBenchScores(
   cells: EvalCell[],
   proposals: Proposal[],
-  groundTruth: Record<string, GroundTruth>
+  groundTruth: Record<string, GroundTruth>,
 ): ModelScore[] {
   const bySlug = new Map(proposals.map((p) => [p.slug, p]));
   const acc = new Map<string, number[]>();
@@ -114,9 +110,7 @@ export function fundingBenchScores(
     const from = proposalYear(p);
     const pred = sumYears(c.raiseByYearUsd, from, LAST_ACTUAL_YEAR);
     const actual = sumYears(actualByYear(gt), from, LAST_ACTUAL_YEAR);
-    (acc.get(c.model) ?? acc.set(c.model, []).get(c.model)!).push(
-      cellAccuracy(pred, actual)
-    );
+    (acc.get(c.model) ?? acc.set(c.model, []).get(c.model)!).push(cellAccuracy(pred, actual));
   }
   return [...acc.entries()]
     .map(([model, xs]) => ({
@@ -150,7 +144,7 @@ export interface ModelFunderScore {
 export function scoreCells(
   cells: EvalCell[],
   proposals: Proposal[],
-  groundTruth: Record<string, GroundTruth>
+  groundTruth: Record<string, GroundTruth>,
 ): ModelFunderScore[] {
   const bySlug = new Map(proposals.map((p) => [p.slug, p]));
   const groups = new Map<string, EvalCell[]>();
@@ -187,14 +181,11 @@ export function scoreCells(
       medianAbsLogError: median(comparisons.map((c) => c.absLogError)),
       spearman: spearman(
         comparisons.map((c) => c.predictedUsd),
-        comparisons.map((c) => c.actualUsd)
+        comparisons.map((c) => c.actualUsd),
       ),
       comparisons,
     });
   }
-  scores.sort(
-    (a, b) =>
-      a.funderSlug.localeCompare(b.funderSlug) || a.model.localeCompare(b.model)
-  );
+  scores.sort((a, b) => a.funderSlug.localeCompare(b.funderSlug) || a.model.localeCompare(b.model));
   return scores;
 }

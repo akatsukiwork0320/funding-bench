@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // Epoch-style scatter: FundingBench score (0–100) vs model release date.
 // Single conceptual series → one accent hue, identity via direct labels
@@ -17,9 +17,7 @@ const M = { top: 16, right: 24, bottom: 36, left: 40 };
 
 export default function ScoreChart({ points }: { points: ScorePoint[] }) {
   if (points.length === 0) return null;
-  const pts = [...points].sort(
-    (a, b) => Date.parse(a.released) - Date.parse(b.released)
-  );
+  const pts = [...points].sort((a, b) => Date.parse(a.released) - Date.parse(b.released));
 
   const t0 = Date.parse(pts[0].released);
   const t1 = Date.parse(pts[pts.length - 1].released);
@@ -45,20 +43,20 @@ export default function ScoreChart({ points }: { points: ScorePoint[] }) {
   // close in x, split them horizontally — left member's label goes left of
   // its dot, right member's goes right — so labels never cover a neighbor.
   const xs = pts.map((p) => x(Date.parse(p.released)));
-  type Placement = { anchor: 'start' | 'middle' | 'end'; lx: number; ly: number; scoreDy?: number };
+  type Placement = { anchor: "start" | "middle" | "end"; lx: number; ly: number; scoreDy?: number };
   const placement = (i: number, px: number, py: number): Placement => {
     const crowded = xs.some((ox, j) => j !== i && Math.abs(ox - px) < 90);
     if (crowded) {
       const isLeft = !xs.some((ox, j) => j !== i && Math.abs(ox - px) < 90 && ox < px);
-      if (isLeft) return { anchor: 'end', lx: px - 12, ly: py + 4, scoreDy: -12 };
+      if (isLeft) return { anchor: "end", lx: px - 12, ly: py + 4, scoreDy: -12 };
       // right member: label to the right, unless that would clip the edge —
       // then drop it below the dot, right-aligned
       return px + 100 > W - M.right
-        ? { anchor: 'end', lx: px + 6, ly: py + 20 }
-        : { anchor: 'start', lx: px + 12, ly: py + 4 };
+        ? { anchor: "end", lx: px + 6, ly: py + 20 }
+        : { anchor: "start", lx: px + 12, ly: py + 4 };
     }
     return {
-      anchor: px > W - M.right - 90 ? 'end' : px < M.left + 60 ? 'start' : 'middle',
+      anchor: px > W - M.right - 90 ? "end" : px < M.left + 60 ? "start" : "middle",
       lx: px,
       ly: py < M.top + 30 ? py + 18 : py - 10,
     };

@@ -10,9 +10,7 @@
     "proposal_date": "2023-07-18",
     "funding_goal": 270000,
     "min_funding": 30000,
-    "causes": [
-      "tais"
-    ],
+    "causes": ["tais"],
     "url": "https://manifund.org/projects/scoping-developmental-interpretability-xg55b33wsfc"
   },
   {
@@ -26,9 +24,7 @@
     "proposal_date": "2023-07-20",
     "funding_goal": 600000,
     "min_funding": 500,
-    "causes": [
-      "tais"
-    ],
+    "causes": ["tais"],
     "url": "https://manifund.org/projects/apollo-research-scale-up-interpretability--behavioral-model-evals-research"
   },
   {
@@ -42,9 +38,7 @@
     "proposal_date": "2023-07-25",
     "funding_goal": 200000,
     "min_funding": 5002,
-    "causes": [
-      "ai-gov"
-    ],
+    "causes": ["ai-gov"],
     "url": "https://manifund.org/projects/support-for-deep-coverage-of-china-and-ai"
   },
   {
@@ -58,15 +52,7 @@
     "proposal_date": "2024-05-08",
     "funding_goal": 1000000,
     "min_funding": 1000,
-    "causes": [
-      "science",
-      "tais",
-      "ai-gov",
-      "ea-community-choice",
-      "ea",
-      "forecasting",
-      "gcr"
-    ],
+    "causes": ["science", "tais", "ai-gov", "ea-community-choice", "ea", "forecasting", "gcr"],
     "url": "https://manifund.org/projects/lightcone-infrastructure"
   },
   {
@@ -80,10 +66,7 @@
     "proposal_date": "2025-12-16",
     "funding_goal": 3250000,
     "min_funding": 500,
-    "causes": [
-      "ai-gov",
-      "gcr"
-    ],
+    "causes": ["ai-gov", "gcr"],
     "url": "https://manifund.org/projects/forethought"
   },
   {
@@ -97,9 +80,7 @@
     "proposal_date": "2023-07-03",
     "funding_goal": 250000,
     "min_funding": 50000,
-    "causes": [
-      "tais"
-    ],
+    "causes": ["tais"],
     "url": "https://manifund.org/projects/independent-researcher"
   },
   {
@@ -113,10 +94,7 @@
     "proposal_date": "2023-12-11",
     "funding_goal": 313000,
     "min_funding": 28000,
-    "causes": [
-      "tais",
-      "ai-gov"
-    ],
+    "causes": ["tais", "ai-gov"],
     "url": "https://manifund.org/projects/10th-edition-of-ai-safety-camp"
   },
   {
@@ -130,11 +108,7 @@
     "proposal_date": "2024-10-24",
     "funding_goal": 188000,
     "min_funding": 1000,
-    "causes": [
-      "science",
-      "tais",
-      "ai-gov"
-    ],
+    "causes": ["science", "tais", "ai-gov"],
     "url": "https://manifund.org/projects/finishing-the-sb-1047-documentary-in-6-weeks"
   },
   {
@@ -148,10 +122,7 @@
     "proposal_date": "2025-03-31",
     "funding_goal": 400000,
     "min_funding": 50000,
-    "causes": [
-      "tais",
-      "ea"
-    ],
+    "causes": ["tais", "ea"],
     "url": "https://manifund.org/projects/mox-a-coworking--events-space-in-sf"
   },
   {
@@ -165,12 +136,7 @@
     "proposal_date": "2025-03-31",
     "funding_goal": 368754,
     "min_funding": 5000,
-    "causes": [
-      "science",
-      "tais",
-      "ai-gov",
-      "gcr"
-    ],
+    "causes": ["science", "tais", "ai-gov", "gcr"],
     "url": "https://manifund.org/projects/creating-making-god-an-accessible-feature-documentary-on-risks-from-agi"
   },
   {
@@ -184,9 +150,7 @@
     "proposal_date": "2024-07-12",
     "funding_goal": 670000,
     "min_funding": 25000,
-    "causes": [
-      "tais"
-    ],
+    "causes": ["tais"],
     "url": "https://manifund.org/projects/next-steps-in-developmental-interpretability"
   },
   {
@@ -200,12 +164,7 @@
     "proposal_date": "2025-03-15",
     "funding_goal": 300000,
     "min_funding": 200000,
-    "causes": [
-      "science",
-      "tais",
-      "ai-gov",
-      "gcr"
-    ],
+    "causes": ["science", "tais", "ai-gov", "gcr"],
     "url": "https://manifund.org/projects/evaluating-llm-safety-in-a-multilingual-world"
   },
   {
@@ -219,10 +178,7 @@
     "proposal_date": "2025-07-22",
     "funding_goal": 87543,
     "min_funding": 87542,
-    "causes": [
-      "tais",
-      "ai-gov"
-    ],
+    "causes": ["tais", "ai-gov"],
     "url": "https://manifund.org/projects/funding-researcher-on-frontier-ai-governance-inclusive-of-global-majority-"
   },
   {
@@ -236,11 +192,7 @@
     "proposal_date": "2025-04-11",
     "funding_goal": 21000,
     "min_funding": 18000,
-    "causes": [
-      "tais",
-      "ai-gov",
-      "gcr"
-    ],
+    "causes": ["tais", "ai-gov", "gcr"],
     "url": "https://manifund.org/projects/scaling-ai-safety-awareness-via-content-creators"
   },
   {
@@ -254,10 +206,7 @@
     "proposal_date": "2024-08-30",
     "funding_goal": 50000,
     "min_funding": 500,
-    "causes": [
-      "ai-gov",
-      "ea-community-choice"
-    ],
+    "causes": ["ai-gov", "ea-community-choice"],
     "url": "https://manifund.org/projects/testing-and-spreading-messages-to-reduce-ai-x-risk"
   },
   {
@@ -271,9 +220,7 @@
     "proposal_date": "2024-08-17",
     "funding_goal": 16047,
     "min_funding": 6380,
-    "causes": [
-      "tais"
-    ],
+    "causes": ["tais"],
     "url": "https://manifund.org/projects/compute-for-4-mats-scholars-to-rapidly-scale-promising-new-method-pre-iclr"
   },
   {
@@ -287,10 +234,7 @@
     "proposal_date": "2025-06-08",
     "funding_goal": 2500,
     "min_funding": 500,
-    "causes": [
-      "tais",
-      "ai-gov"
-    ],
+    "causes": ["tais", "ai-gov"],
     "url": "https://manifund.org/projects/funding-to-present-a-poster-at-the-icml-technical-ai-governance-workshop"
   },
   {
@@ -304,13 +248,7 @@
     "proposal_date": "2025-07-05",
     "funding_goal": 500000,
     "min_funding": 250000,
-    "causes": [
-      "science",
-      "tais",
-      "ai-gov",
-      "ea",
-      "ghd"
-    ],
+    "causes": ["science", "tais", "ai-gov", "ea", "ghd"],
     "url": "https://manifund.org/projects/genesis-protocol-building-safe-transparent-agi"
   },
   {
@@ -324,13 +262,7 @@
     "proposal_date": "2023-12-18",
     "funding_goal": 248000,
     "min_funding": 2000,
-    "causes": [
-      "science",
-      "tais",
-      "ai-gov",
-      "ea",
-      "gcr"
-    ],
+    "causes": ["science", "tais", "ai-gov", "ea", "gcr"],
     "url": "https://manifund.org/projects/help-apart-expand-global-ai-safety-research"
   },
   {
@@ -344,12 +276,7 @@
     "proposal_date": "2024-04-18",
     "funding_goal": 40000,
     "min_funding": 20001,
-    "causes": [
-      "tais",
-      "ai-gov",
-      "ea",
-      "gcr"
-    ],
+    "causes": ["tais", "ai-gov", "ea", "gcr"],
     "url": "https://manifund.org/projects/govt-action-kit"
   }
 ]

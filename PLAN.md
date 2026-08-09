@@ -32,6 +32,7 @@ and max ask ("funding_goal" / "min_funding" on Manifund). **Excluded**: comments
 current stage, anything post-dating the proposal.
 
 `data/ground-truth.json` — never shown to models. Per project, by calendar year:
+
 - Manifund $ raised (from txns API)
 - External funding (Coefficient Giving/Open Phil grants DB, SFF grant lists, LTFF payout
   reports, Longterm Wiki, org annual reports, web search) with a source URL per entry

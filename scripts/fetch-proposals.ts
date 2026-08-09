@@ -95,7 +95,10 @@ function descriptionToMarkdown(desc: unknown): string {
     if (Array.isArray(node.content)) node.content.forEach(walk);
   };
   walk(desc);
-  return parts.join("").replace(/\n{3,}/g, "\n\n").trim();
+  return parts
+    .join("")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 function isEligibleForRandomPool(p: ApiProject): boolean {
@@ -130,9 +133,7 @@ async function main() {
   const missing = CURATED_SLUGS.filter((s) => !bySlug.has(s));
   if (missing.length) throw new Error(`Curated slugs not found: ${missing.join(", ")}`);
 
-  const pool = all
-    .filter(isEligibleForRandomPool)
-    .sort((a, b) => a.slug.localeCompare(b.slug));
+  const pool = all.filter(isEligibleForRandomPool).sort((a, b) => a.slug.localeCompare(b.slug));
   console.log(`random pool: ${pool.length} eligible projects`);
 
   const rand = mulberry32(SEED);
@@ -143,10 +144,7 @@ async function main() {
   }
   const randomPicks = shuffled.slice(0, RANDOM_COUNT);
 
-  const selected = [
-    ...CURATED_SLUGS.map((s) => bySlug.get(s)!),
-    ...randomPicks,
-  ];
+  const selected = [...CURATED_SLUGS.map((s) => bySlug.get(s)!), ...randomPicks];
 
   const proposals = selected.map((p, i) => ({
     slug: p.slug,
@@ -176,15 +174,14 @@ async function main() {
     // researched separately (merge-research.ts); never clobber them with {}.
     const recomputedByYear = manifundRaisedByYear(p);
     const existingByYear = existing[p.slug]?.manifund_raised_by_year ?? {};
-    const byYear =
-      Object.keys(recomputedByYear).length > 0 ? recomputedByYear : existingByYear;
+    const byYear = Object.keys(recomputedByYear).length > 0 ? recomputedByYear : existingByYear;
     const total = Math.round(
-      (p.txns ?? []).filter((t) => !t.token || t.token === "USD").reduce((s, t) => s + t.amount, 0)
+      (p.txns ?? []).filter((t) => !t.token || t.token === "USD").reduce((s, t) => s + t.amount, 0),
     );
     const bySum = Object.values(byYear as Record<string, number>).reduce((s, v) => s + v, 0);
     if (Object.keys(byYear).length > 0 && Math.abs(bySum - total) > 2) {
       console.warn(
-        `WARNING ${p.slug}: yearly sum $${bySum} != total $${total} — yearly data may be stale`
+        `WARNING ${p.slug}: yearly sum $${bySum} != total $${total} — yearly data may be stale`,
       );
     }
     groundTruth[p.slug] = {
@@ -205,7 +202,7 @@ async function main() {
   console.log(`wrote ${proposals.length} proposals`);
   for (const p of proposals) {
     console.log(
-      `  [${p.cohort}] ${p.proposal_date} ${p.slug} (goal $${p.funding_goal.toLocaleString()})`
+      `  [${p.cohort}] ${p.proposal_date} ${p.slug} (goal $${p.funding_goal.toLocaleString()})`,
     );
   }
 }

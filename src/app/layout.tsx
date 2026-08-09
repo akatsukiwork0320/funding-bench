@@ -1,22 +1,21 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import Link from 'next/link';
-import './globals.css';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
+import "./globals.css";
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Funding Bench',
-  description:
-    'A benchmark for how well LLMs assess grant proposals and predict follow-up funding',
+  title: "Funding Bench",
+  description: "A benchmark for how well LLMs assess grant proposals and predict follow-up funding",
 };
 
 export default function RootLayout({
@@ -26,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono`}>
         <div className="mx-auto max-w-4xl px-4 py-8">
           <header className="mb-10 border-b-2 border-orange-500 pb-4">
             <Link href="/" className="text-xl font-bold">
@@ -48,7 +45,7 @@ export default function RootLayout({
           </header>
           <main>{children}</main>
           <footer className="mt-16 border-t border-neutral-300 pt-4 text-xs text-neutral-500 dark:border-neutral-700">
-            Funding Bench 0 — proposals from{' '}
+            Funding Bench 0 — proposals from{" "}
             <a href="https://manifund.org" className="underline">
               Manifund
             </a>
