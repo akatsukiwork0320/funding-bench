@@ -41,6 +41,9 @@ export default function RootLayout({
               <Link href="/results" className="hover:text-orange-600 underline">
                 results
               </Link>
+              <Link href="/about" className="hover:text-orange-600 underline">
+                about
+              </Link>
             </nav>
           </header>
           <main>{children}</main>
