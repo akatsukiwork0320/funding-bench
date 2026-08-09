@@ -33,3 +33,17 @@ bun run eval -- --dry-run # print the first prompt
 - `scripts/` — dataset + eval pipeline (bun)
 - `src/lib/types.ts` — dataset types; `scoring.ts` — metrics (median |log error|, Spearman)
 - Eval results live in InstantDB (`evals` entity); the `/results` page reads them live.
+
+## TODOs
+- Sanitize/check all the underlying data (eg Timaeus and Apollo funding numbers are clearly wrong)
+  - And later set up some pipeline that gets us good data on all this stuff
+- Think about a reasonable scoring function, I don't understand/trust the current one
+  - Especially, think about a scoring function that's more like a trading function, aka more prediction market than metaculus average (more points when the forecast matters more)
+  - ... maybe it actually just makes sense to set up thick-ish prediction markets (or futures) on these outcomes and let models trade on them
+- Maybe optimize the funder rubrics more. Or give up on them since the models aren't using them much, idk
+  - Look into the current scaffold
+- Rerun just to see how robust the forecasts are between runs
+
+Nice UI stuff
+- Show the run reasoning in some readable/sane way
+- Cut all the slop ofc
