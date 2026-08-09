@@ -12,10 +12,31 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Chart palette — categorical slots assigned to models in fixed order
+   (MODEL_META release order). Validated (all-pairs CVD + normal-vision +
+   contrast) against #fff / #0a0a0a with the dataviz palette validator;
+   don't eyeball replacements. */
+:root {
+  --chart-s1: #2a78d6; /* blue */
+  --chart-s2: #eb6834; /* orange */
+  --chart-s3: #1baf7a; /* aqua */
+  --chart-s4: #841d6b; /* berry */
+  --chart-s5: #84550f; /* bronze */
+  --chart-grid: #e5e5e5;
+  --chart-muted: #898781;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --chart-s1: #3987e5;
+    --chart-s2: #d95926;
+    --chart-s3: #199e70;
+    --chart-s4: #b73095;
+    --chart-s5: #81520a;
+    --chart-grid: #262626;
+    --chart-muted: #898781;
   }
 }
 

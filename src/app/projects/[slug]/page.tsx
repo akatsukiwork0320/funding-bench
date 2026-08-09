@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { getProposal, getProposals } from "@/lib/data";
+import FundingChart from "@/components/funding-chart";
+import { getFunders, getGroundTruth, getProposal, getProposals } from "@/lib/data";
 
 export function generateStaticParams() {
   return getProposals().map((p) => ({ slug: p.slug }));
@@ -28,6 +29,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <dt className="text-neutral-500">max ask</dt>
         <dd>${p.funding_goal.toLocaleString()}</dd>
       </dl>
+      <FundingChart
+        proposal={p}
+        groundTruth={getGroundTruth()[slug] ?? null}
+        funders={getFunders()}
+      />
       <div className="prose-bench mt-6">
         <ReactMarkdown>{p.description}</ReactMarkdown>
       </div>
