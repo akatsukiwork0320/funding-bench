@@ -25,6 +25,16 @@ bun run eval              # run all missing eval cells (models × funders × pro
 bun run eval -- --dry-run # print the first prompt
 ```
 
+## Offline scoring example
+
+`bun run scripts/audit-timaeus.ts` compares current Timaeus scoring with two
+illustrative target definitions using the committed records and a synthetic
+prediction. Run its checks with `bun test scripts/audit-timaeus.test.ts`.
+Neither command needs credentials, model calls, or InstantDB. The prompt asks
+for predictions through 2028; current scoring ends in 2026. The example does
+not establish complete fundraising totals, select a correct target definition,
+or measure changes to actual model rankings.
+
 ## Layout
 
 - `data/proposals.json` — 20 proposals, model-visible fields only
